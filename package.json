@@ -1,0 +1,33 @@
+{
+  "name": "angular-sheba",
+  "version": "1.0.0",
+  "description": "Iran sheba for angular",
+  "main": "index.js",
+  "scripts": {
+    "transpile": "ngc",
+    "package": "rollup -c",
+    "minify": "uglifyjs dist/bundles/angularsheba.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/angularsheba.umd.min.js",
+    "build": "npm run transpile && npm run package && npm run minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b3hz4d/angular-sheba.git"
+  },
+  "keywords": [
+    "sheba"
+  ],
+  "author": "Behzad Fattahi <F.behzad75@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/b3hz4d/angular-sheba/issues"
+  },
+  "homepage": "https://github.com/b3hz4d/angular-sheba#readme",
+  "devDependencies": {
+    "@angular/core": "^5.2.9",
+    "@angular/compiler": "^5.2.9",
+    "@angular/compiler-cli": "^5.2.9",
+    "rollup": "^0.62.0",
+    "typescript": "^2.6.2",
+    "uglify-js": "^3.4.3"
+  }
+}
