@@ -6,8 +6,6 @@
 
     var ShebaService = /** @class */ (function () {
         function ShebaService() {
-            this.pattern = /IR[0-9]{24}/;
-            this.pattern_code = /IR[0-9]{2}([0-9]{3})[0-9]{19}/;
             this.banks = [{
                     nickname: 'central-bank',
                     name: 'Central Bank of Iran',
@@ -237,6 +235,10 @@
                     code: '095',
                     accountNumberAvailable: false
                 }];
+            this.banksHash = {};
+            this.banksOutput = [];
+            this.pattern = /IR[0-9]{24}/;
+            this.pattern_code = /IR[0-9]{2}([0-9]{3})[0-9]{19}/;
             for (var i = 0; i < this.banks.length; i++) {
                 this.banksHash[this.banks[i].code] = this.banks[i];
                 this.banksOutput.push({

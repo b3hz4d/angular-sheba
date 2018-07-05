@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 var ShebaService = /** @class */ (function () {
     function ShebaService() {
-        this.pattern = /IR[0-9]{24}/;
-        this.pattern_code = /IR[0-9]{2}([0-9]{3})[0-9]{19}/;
         this.banks = [{
                 nickname: 'central-bank',
                 name: 'Central Bank of Iran',
@@ -232,6 +230,10 @@ var ShebaService = /** @class */ (function () {
                 code: '095',
                 accountNumberAvailable: false
             }];
+        this.banksHash = {};
+        this.banksOutput = [];
+        this.pattern = /IR[0-9]{24}/;
+        this.pattern_code = /IR[0-9]{2}([0-9]{3})[0-9]{19}/;
         for (var i = 0; i < this.banks.length; i++) {
             this.banksHash[this.banks[i].code] = this.banks[i];
             this.banksOutput.push({
@@ -243,6 +245,7 @@ var ShebaService = /** @class */ (function () {
             });
         }
     }
+    ;
     ShebaService.prototype.iso7064Mod97_10 = function (iban) {
         var remainder = iban, block;
         while (remainder.length > 2) {
