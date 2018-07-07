@@ -240,7 +240,7 @@ export class ShebaService {
 
     constructor(){      
         for (var i = 0; i < this.banks.length; i++) {
-            this.banksHash[this.banks[i].code] = this.banks[i];
+            this.banksHash[this.banks[i].code.toString()] = this.banks[i];
           
             this.banksOutput.push({
               nickname: this.banks[i].nickname,

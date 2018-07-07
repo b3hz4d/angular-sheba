@@ -240,7 +240,7 @@
             this.pattern = /IR[0-9]{24}/;
             this.pattern_code = /IR[0-9]{2}([0-9]{3})[0-9]{19}/;
             for (var i = 0; i < this.banks.length; i++) {
-                this.banksHash[this.banks[i].code] = this.banks[i];
+                this.banksHash[this.banks[i].code.toString()] = this.banks[i];
                 this.banksOutput.push({
                     nickname: this.banks[i].nickname,
                     name: this.banks[i].name,
